@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap');
+@import url(
+  'https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap'
+);
 
 
-/* =========================
-   ROOT VARIABLES
-========================= */
+/* =====================================================
+   ROOT
+===================================================== */
 
 :root {
   --black: #050505;
@@ -14,9 +16,9 @@
 }
 
 
-/* =========================
-   GLOBAL
-========================= */
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
 
 * {
   margin: 0;
@@ -31,7 +33,10 @@ html {
 body {
   background: var(--black);
   color: var(--cream);
+
   font-family: "Space Mono", monospace;
+
+  overflow-x: hidden;
 }
 
 button {
@@ -40,19 +45,24 @@ button {
 }
 
 .app {
+  width: 100%;
   overflow: hidden;
 }
 
 
-/* =========================
+/* =====================================================
    NAVBAR
-========================= */
+===================================================== */
 
 .navbar {
   position: fixed;
+
   top: 0;
+  left: 0;
+
   width: 100%;
   height: 80px;
+
   z-index: 1000;
 
   display: flex;
@@ -62,23 +72,31 @@ button {
   padding: 0 5%;
 
   background: rgba(5, 5, 5, 0.82);
+
   backdrop-filter: blur(15px);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+
+/* LOGO */
+
 .logo {
-  border: 0;
+  border: none;
+
   background: transparent;
 
   color: var(--cream);
 
   font-family: Anton;
+
   font-size: 18px;
+
   letter-spacing: 3px;
 
   display: flex;
   align-items: center;
+
   gap: 10px;
 }
 
@@ -89,18 +107,21 @@ button {
   border-radius: 50%;
 
   background: var(--red);
+
   color: white;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  font-weight: 700;
   font-family: Anton;
+
+  font-weight: 700;
 }
 
 .logo-text {
   font-size: 20px;
+
   letter-spacing: 4px;
 }
 
@@ -108,17 +129,24 @@ button {
   color: var(--red);
 }
 
+
+/* NAVIGATION */
+
 .nav-links {
   display: flex;
+
   align-items: center;
+
   gap: 20px;
 }
 
 .nav-links button {
-  background: none;
   border: none;
 
+  background: transparent;
+
   color: var(--cream);
+
   font-size: 10px;
 
   transition: 0.3s;
@@ -130,25 +158,31 @@ button {
 
 .nav-intro {
   display: flex;
+
   align-items: center;
+
   gap: 6px;
 
   color: var(--red) !important;
 }
 
+
+/* MOBILE MENU BUTTON */
+
 .menu-button {
   display: none;
 
-  background: none;
+  background: transparent;
+
   border: none;
 
   color: white;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* =====================================================
+   HERO SECTION
+===================================================== */
 
 .hero {
   min-height: 100vh;
@@ -156,6 +190,7 @@ button {
   position: relative;
 
   display: flex;
+
   align-items: center;
 
   padding: 120px 8% 50px;
@@ -165,8 +200,12 @@ button {
   background: var(--black);
 }
 
+
+/* PARTICLE BACKGROUND */
+
 .three-background {
   position: absolute;
+
   inset: 0;
 
   z-index: 0;
@@ -176,8 +215,12 @@ button {
   pointer-events: none;
 }
 
+
+/* HERO BACKGROUND GLOW */
+
 .hero-background {
   position: absolute;
+
   inset: 0;
 
   z-index: 1;
@@ -190,16 +233,23 @@ button {
     );
 }
 
+
+/* HERO CONTENT */
+
 .hero-content {
   position: relative;
 
-  z-index: 3;
+  z-index: 5;
 
   max-width: 650px;
 }
 
+
+/* SMALL HEADINGS */
+
 .small-heading {
   font-size: 12px;
+
   letter-spacing: 7px;
 
   margin-bottom: 10px;
@@ -209,25 +259,32 @@ button {
   color: var(--red);
 }
 
+
+/* MAIN TITLE */
+
 .hero h1 {
   font-family: Anton;
 
   font-size: clamp(100px, 15vw, 230px);
 
   line-height: 0.8;
+
   letter-spacing: -5px;
 }
+
+
+/* SUB TITLE */
 
 .hero h2 {
   font-family: Anton;
 
   font-size: clamp(60px, 9vw, 140px);
 
+  line-height: 0.9;
+
   color: #151515;
 
   -webkit-text-stroke: 1px #555;
-
-  line-height: 0.9;
 }
 
 .hero h2 span {
@@ -236,13 +293,23 @@ button {
   -webkit-text-stroke: 0;
 }
 
+
+/* DESCRIPTION */
+
 .hero-description {
   color: var(--gray);
 
   margin-top: 30px;
 
   font-size: 12px;
+
+  line-height: 1.8;
 }
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
 
 .hero-buttons {
   display: flex;
@@ -256,10 +323,20 @@ button {
 .outline-button {
   padding: 15px 22px;
 
+  min-height: 52px;
+
   display: flex;
+
   align-items: center;
+  justify-content: center;
+
   gap: 10px;
+
+  transition: 0.3s;
 }
+
+
+/* RED BUTTON */
 
 .red-button {
   background: var(--red);
@@ -267,8 +344,6 @@ button {
   border: none;
 
   color: white;
-
-  transition: 0.3s;
 }
 
 .red-button:hover {
@@ -277,14 +352,15 @@ button {
   transform: translateY(-3px);
 }
 
+
+/* OUTLINE BUTTON */
+
 .outline-button {
   background: transparent;
 
   border: 1px solid var(--red);
 
   color: var(--cream);
-
-  transition: 0.3s;
 }
 
 .outline-button:hover {
@@ -294,14 +370,15 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    HERO IMAGE
-========================= */
+===================================================== */
 
 .hero-image-container {
   position: absolute;
 
   right: 5%;
+
   bottom: 0;
 
   height: 90%;
@@ -309,20 +386,26 @@ button {
   z-index: 2;
 
   display: flex;
+
   align-items: flex-end;
+
   justify-content: center;
 }
 
 .hero-image {
   height: 100%;
 
-  max-width: 600px;
   width: auto;
+
+  max-width: 600px;
 
   object-fit: contain;
 
   mix-blend-mode: screen;
 }
+
+
+/* RED GLOW */
 
 .red-glow {
   position: absolute;
@@ -340,17 +423,18 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    SIDE TEXT
-========================= */
+===================================================== */
 
 .hero-side-text {
   position: absolute;
 
-  font-size: 12px;
-  line-height: 2;
-
   z-index: 4;
+
+  font-size: 12px;
+
+  line-height: 2;
 }
 
 .hero-side-text span {
@@ -359,49 +443,54 @@ button {
 
 .hero-side-text.left {
   left: 3%;
+
   top: 50%;
 }
 
 .hero-side-text.right {
   right: 3%;
+
   top: 35%;
 }
 
 
-/* =========================
+/* =====================================================
    SCROLL INDICATOR
-========================= */
+===================================================== */
 
 .scroll-indicator {
   position: absolute;
 
   bottom: 30px;
+
   left: 50%;
 
   transform: translateX(-50%);
 
-  font-size: 10px;
+  z-index: 5;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 
   gap: 10px;
 
-  z-index: 4;
+  font-size: 10px;
 }
 
 
-/* =========================
+/* =====================================================
    SECTIONS
-========================= */
+===================================================== */
 
 .section {
   min-height: 100vh;
 
-  padding: 130px 8%;
-
   position: relative;
+
+  padding: 130px 8%;
 
   background: var(--black);
 }
@@ -414,6 +503,7 @@ button {
   color: var(--red);
 
   font-size: 12px;
+
   letter-spacing: 4px;
 
   margin-bottom: 50px;
@@ -434,9 +524,9 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    ABOUT
-========================= */
+===================================================== */
 
 .about-grid {
   display: grid;
@@ -466,13 +556,14 @@ button {
 
 .stats div {
   display: flex;
+
   flex-direction: column;
 }
 
 .stats strong {
-  font-size: 45px;
-
   color: var(--red);
+
+  font-size: 45px;
 }
 
 .stats span {
@@ -480,9 +571,9 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    SKILLS
-========================= */
+===================================================== */
 
 .skills-grid {
   display: grid;
@@ -539,9 +630,9 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    PROJECTS
-========================= */
+===================================================== */
 
 .projects-grid {
   display: grid;
@@ -557,8 +648,6 @@ button {
   padding: 40px;
 
   border: 1px solid #333;
-
-  position: relative;
 
   background:
     linear-gradient(
@@ -607,7 +696,7 @@ button {
 .project-card button {
   margin-top: 30px;
 
-  background: none;
+  background: transparent;
 
   border: none;
 
@@ -615,9 +704,9 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    CERTIFICATES
-========================= */
+===================================================== */
 
 .certificates-grid {
   display: grid;
@@ -639,27 +728,22 @@ button {
   width: 150px;
   height: 150px;
 
+  margin: auto;
+
   border: 2px solid var(--red);
 
   border-radius: 50%;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
-  margin: auto;
+  overflow: hidden;
 
   color: var(--red);
 
   animation: spin 18s linear infinite;
-
-  overflow: hidden;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .certificate-circle.with-image {
@@ -672,9 +756,13 @@ button {
 
   object-fit: cover;
 
-  display: block;
-
   border-radius: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .certificate-card h3 {
@@ -688,9 +776,9 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    EXPERIENCE
-========================= */
+===================================================== */
 
 .timeline {
   max-width: 900px;
@@ -738,9 +826,9 @@ button {
 }
 
 
-/* =========================
+/* =====================================================
    CONTACT
-========================= */
+===================================================== */
 
 .contact-section {
   text-align: center;
@@ -752,6 +840,7 @@ button {
   margin: auto;
 
   display: flex;
+
   flex-direction: column;
 
   gap: 20px;
@@ -779,9 +868,9 @@ button {
 
   background: var(--red);
 
-  color: white;
-
   border: none;
+
+  color: white;
 }
 
 .social-links {
@@ -805,9 +894,9 @@ button {
 }
 
 
-/* =========================
-   TABLET
-========================= */
+/* =====================================================
+   TABLET RESPONSIVE
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -815,12 +904,16 @@ button {
     position: fixed;
 
     top: 80px;
+
     right: -100%;
 
     width: 100%;
+
     height: calc(100vh - 80px);
 
     background: #050505;
+
+    display: flex;
 
     flex-direction: column;
 
@@ -854,16 +947,12 @@ button {
     font-size: 60px;
   }
 
-  /*
-    Tablet image fix
-  */
-
   .hero-image-container {
     right: 0;
 
-    height: 62%;
-
     width: 55%;
+
+    height: 62%;
 
     opacity: 0.55;
   }
@@ -900,11 +989,13 @@ button {
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
 
 @media (max-width: 500px) {
+
+  /* NAVBAR */
 
   .navbar {
     height: 70px;
@@ -921,20 +1012,32 @@ button {
     height: 38px;
   }
 
+
+  /* HERO */
+
   .hero {
     min-height: 100svh;
 
-    padding: 120px 20px 40px;
+    padding: 145px 20px 30px;
 
-    display: block;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    overflow: hidden;
   }
 
+
+  /* CONTENT */
+
   .hero-content {
+    width: 100%;
+
     position: relative;
 
-    z-index: 5;
-
-    width: 100%;
+    z-index: 10;
   }
 
   .small-heading {
@@ -949,30 +1052,41 @@ button {
     letter-spacing: -2px;
 
     margin-top: 20px;
+
+    white-space: nowrap;
   }
 
   .hero h2 {
     font-size: clamp(40px, 12vw, 60px);
 
     margin-top: 10px;
+
+    white-space: nowrap;
   }
 
   .hero-description {
-    font-size: 9px;
-
-    line-height: 1.8;
+    max-width: 280px;
 
     margin-top: 20px;
 
-    max-width: 280px;
+    font-size: 9px;
+
+    line-height: 1.8;
   }
 
-  .hero-buttons {
-    flex-direction: column;
 
+  /* BUTTONS */
+
+  .hero-buttons {
     width: 100%;
 
     max-width: 280px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
 
     margin-top: 25px;
   }
@@ -981,36 +1095,41 @@ button {
   .outline-button {
     width: 100%;
 
+    min-height: 65px;
+
     justify-content: center;
+
+    position: relative;
+
+    z-index: 20;
   }
 
-  /*
-    IMPORTANT MOBILE IMAGE FIX
 
-    The previous right: -100px pushed the image
-    outside the screen.
-
-    Now the image is centered and fully visible.
-  */
+  /* IMAGE */
 
   .hero-image-container {
-    position: absolute;
+    position: relative;
 
-    right: 0;
-    left: 0;
-
-    bottom: 0;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
 
     width: 100%;
 
-    height: 48%;
+    height: 420px;
+
+    margin-top: 25px;
 
     display: flex;
 
-    justify-content: center;
     align-items: flex-end;
 
-    opacity: 0.45;
+    justify-content: center;
+
+    z-index: 2;
+
+    opacity: 0.55;
 
     pointer-events: none;
   }
@@ -1020,7 +1139,7 @@ button {
 
     height: 100%;
 
-    max-width: 360px;
+    max-width: 350px;
 
     object-fit: contain;
 
@@ -1029,20 +1148,40 @@ button {
 
   .red-glow {
     width: 280px;
+
     height: 280px;
 
     filter: blur(100px);
   }
 
+
+  /* HIDE SIDE TEXT */
+
+  .hero-side-text {
+    display: none;
+  }
+
+
+  /* SCROLL */
+
   .scroll-indicator {
-    bottom: 15px;
+    position: relative;
+
+    left: auto;
+
+    bottom: auto;
+
+    transform: none;
+
+    margin-top: 10px;
 
     font-size: 8px;
+
+    z-index: 10;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
+
+  /* SECTIONS */
 
   .section {
     padding: 100px 20px;
@@ -1054,6 +1193,9 @@ button {
     margin-bottom: 40px;
   }
 
+
+  /* STATS */
+
   .stats {
     gap: 25px;
   }
@@ -1061,6 +1203,9 @@ button {
   .stats strong {
     font-size: 32px;
   }
+
+
+  /* PROJECTS */
 
   .project-card {
     padding: 25px;
@@ -1070,6 +1215,9 @@ button {
     font-size: 32px;
   }
 
+
+  /* TIMELINE */
+
   .timeline {
     padding-left: 30px;
   }
@@ -1078,17 +1226,19 @@ button {
     left: -38px;
   }
 
+
+  /* CONTACT */
+
   .contact-form input,
   .contact-form textarea {
     padding: 15px;
   }
-
 }
 
 
-/* =========================
-   EXTRA SMALL DEVICES
-========================= */
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
 
 @media (max-width: 360px) {
 
@@ -1101,7 +1251,6 @@ button {
   }
 
   .hero-image-container {
-    height: 42%;
+    height: 380px;
   }
-
 }
