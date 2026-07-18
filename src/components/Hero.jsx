@@ -18,7 +18,7 @@ export default function Hero() {
       "Welcome to my portfolio. I am Methun. I am currently pursuing my third year of Bachelor of Engineering in Computer Science and Engineering. I am passionate about software engineering, data engineering, artificial intelligence, full stack development, and building innovative solutions for real world problems."
     );
 
-    speech.rate = 0.85;
+    speech.rate = 1;
     speech.pitch = 1.00;
     speech.volume = 1;
 
