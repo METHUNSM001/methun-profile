@@ -24,11 +24,6 @@ export default function Hero() {
 
     const voices = window.speechSynthesis.getVoices();
 
-    /*
-      Try to select a male English voice.
-      Voice names depend on the browser and operating system.
-    */
-
     const maleVoiceKeywords = [
       "male",
       "david",
@@ -37,19 +32,17 @@ export default function Hero() {
       "alex",
       "george",
       "james",
-      "ravi",
-      "english india",
-      "en-in"
+      "ravi"
     ];
 
     const maleVoice = voices.find((voice) => {
-      const voiceName = voice.name.toLowerCase();
+      const name = voice.name.toLowerCase();
       const language = voice.lang.toLowerCase();
 
       return (
-        (language.startsWith("en") || language.includes("in")) &&
+        language.startsWith("en") &&
         maleVoiceKeywords.some((keyword) =>
-          voiceName.includes(keyword)
+          name.includes(keyword)
         )
       );
     });
@@ -88,15 +81,15 @@ export default function Hero() {
   return (
     <section className="hero">
 
-      {/* 3D Particle Background */}
+      {/* THREE.JS / PARTICLE BACKGROUND */}
       <div className="three-background">
         <ParticleBackground />
       </div>
 
-      {/* Background Glow */}
+      {/* BACKGROUND GLOW */}
       <div className="hero-background"></div>
 
-      {/* Main Hero Content */}
+      {/* HERO CONTENT */}
       <div className="hero-content">
 
         <motion.div
@@ -112,48 +105,84 @@ export default function Hero() {
           className="small-heading red"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.8
+          }}
         >
           ENGINEERING THE FUTURE
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          initial={{
+            opacity: 0,
+            x: -100
+          }}
+          animate={{
+            opacity: 1,
+            x: 0
+          }}
+          transition={{
+            duration: 1
+          }}
         >
           METHUN
         </motion.h1>
 
         <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 1 }}
+          initial={{
+            opacity: 0,
+            y: 40
+          }}
+          animate={{
+            opacity: 1,
+            y: 0
+          }}
+          transition={{
+            delay: 0.4,
+            duration: 1
+          }}
         >
           SOFTWARE <span>ENGINEER</span>
         </motion.h2>
 
         <motion.p
           className="hero-description"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          initial={{
+            opacity: 0
+          }}
+          animate={{
+            opacity: 1
+          }}
+          transition={{
+            delay: 0.8
+          }}
         >
           BE CSE • DATA ENGINEERING • AI • FULL STACK DEVELOPMENT
         </motion.p>
 
+        {/* BUTTONS */}
         <motion.div
           className="hero-buttons"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.8 }}
+          initial={{
+            opacity: 0,
+            y: 30
+          }}
+          animate={{
+            opacity: 1,
+            y: 0
+          }}
+          transition={{
+            delay: 1,
+            duration: 0.8
+          }}
         >
 
           <button
             className="red-button"
             onClick={welcomeMessage}
           >
-            <Volume2 size={18} />
+            <Volume2 size={20} />
 
             {speaking
               ? "Speaking..."
@@ -171,40 +200,53 @@ export default function Hero() {
 
       </div>
 
-      {/* Hero Image */}
+      {/* HERO IMAGE */}
       <div className="hero-image-container">
 
         <div className="red-glow"></div>
 
         <img
           src="/images/methun.png"
-          className="hero-image"
           alt="Methun"
+          className="hero-image"
         />
 
       </div>
 
-      {/* Side Text */}
+      {/* SIDE TEXT */}
       <div className="hero-side-text left">
+
         CODE.
         <br />
+
         BUILD.
         <br />
+
         <span>INNOVATE.</span>
         <br />
+
         REPEAT.
+
       </div>
 
       <div className="hero-side-text right">
+
         DATA DRIVEN
         <br />
+
         <span>DECISIONS</span>
+
       </div>
 
-      {/* Scroll Indicator */}
+      {/* SCROLL INDICATOR */}
       <div className="scroll-indicator">
-        <ArrowDown />
-        SCROLL TO EXPLORE
+
+        <ArrowDown size={28} />
+
+        <span>
+          SCROLL TO EXPLORE
+        </span>
+
       </div>
 
     </section>
