@@ -12,46 +12,107 @@ export default function Hero() {
       return;
     }
 
+    // Stop any previous speech
     window.speechSynthesis.cancel();
 
     const speech = new SpeechSynthesisUtterance(
       "Welcome to my portfolio. I am Methun. I am currently pursuing my third year of Bachelor of Engineering in Computer Science and Engineering. I am passionate about software engineering, data engineering, artificial intelligence, full stack development, and building innovative solutions for real world problems."
     );
 
-    speech.rate = 1;
-    speech.pitch = 2;
+    /*
+    ==================================================
+    ALPHA MALE / DEEP / HARD VOICE SETTINGS
+    ==================================================
+    */
+
+    // Lower value = slower, more powerful delivery
+    speech.rate = 0.78;
+
+    // Lower value = deeper voice
+    speech.pitch = 0.35;
+
     speech.volume = 1;
+
+
+    /*
+    ==================================================
+    FIND A DEEP MALE ENGLISH VOICE
+    ==================================================
+    */
 
     const voices = window.speechSynthesis.getVoices();
 
-    const maleVoiceKeywords = [
-      "male",
-      "david",
-      "mark",
-      "daniel",
-      "alex",
-      "george",
-      "james",
-      "ravi"
+    const preferredMaleVoices = [
+      "Microsoft David",
+      "Microsoft Mark",
+      "Google UK English Male",
+      "Google US English Male",
+      "Daniel",
+      "Alex",
+      "David",
+      "Mark",
+      "George",
+      "James",
+      "Ravi"
     ];
 
-    const maleVoice = voices.find((voice) => {
-      const name = voice.name.toLowerCase();
-      const language = voice.lang.toLowerCase();
+    let selectedVoice = null;
 
-      return (
-        language.startsWith("en") &&
-        maleVoiceKeywords.some((keyword) =>
-          name.includes(keyword)
-        )
+
+    // First try exact preferred voices
+    for (const preferredName of preferredMaleVoices) {
+      selectedVoice = voices.find((voice) =>
+        voice.name
+          .toLowerCase()
+          .includes(preferredName.toLowerCase())
       );
-    });
 
-    const englishVoice = voices.find((voice) =>
-      voice.lang.toLowerCase().startsWith("en")
-    );
+      if (selectedVoice) {
+        break;
+      }
+    }
 
-    speech.voice = maleVoice || englishVoice || voices[0.2];
+
+    // If preferred voice is not found,
+    // search for any English male voice
+    if (!selectedVoice) {
+      selectedVoice = voices.find((voice) => {
+        const voiceName = voice.name.toLowerCase();
+        const language = voice.lang.toLowerCase();
+
+        return (
+          language.startsWith("en") &&
+          (
+            voiceName.includes("male") ||
+            voiceName.includes("david") ||
+            voiceName.includes("mark") ||
+            voiceName.includes("daniel") ||
+            voiceName.includes("alex") ||
+            voiceName.includes("george") ||
+            voiceName.includes("james")
+          )
+        );
+      });
+    }
+
+
+    // Fallback to any English voice
+    if (!selectedVoice) {
+      selectedVoice = voices.find((voice) =>
+        voice.lang.toLowerCase().startsWith("en")
+      );
+    }
+
+
+    // Set selected voice
+    speech.voice = selectedVoice || voices[0];
+
+
+    /*
+    ==================================================
+    SPEECH EVENTS
+    ==================================================
+    */
 
     speech.onstart = () => {
       setSpeaking(true);
@@ -65,11 +126,21 @@ export default function Hero() {
       setSpeaking(false);
     };
 
+
+    // Speak
     window.speechSynthesis.speak(speech);
   };
 
+
+  /*
+  ==================================================
+  SCROLL TO PROJECTS
+  ==================================================
+  */
+
   const scrollToProjects = () => {
-    const projectsSection = document.getElementById("projects");
+    const projectsSection =
+      document.getElementById("projects");
 
     if (projectsSection) {
       projectsSection.scrollIntoView({
@@ -78,33 +149,52 @@ export default function Hero() {
     }
   };
 
+
   return (
     <section className="hero">
 
-      {/* THREE.JS / PARTICLE BACKGROUND */}
+      {/* THREE.JS PARTICLE BACKGROUND */}
+
       <div className="three-background">
         <ParticleBackground />
       </div>
 
+
       {/* BACKGROUND GLOW */}
+
       <div className="hero-background"></div>
 
+
       {/* HERO CONTENT */}
+
       <div className="hero-content">
 
         <motion.div
           className="small-heading"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{
+            opacity: 0,
+            y: -30
+          }}
+          animate={{
+            opacity: 1,
+            y: 0
+          }}
+          transition={{
+            duration: 0.8
+          }}
         >
           BUILDING SOLUTIONS
         </motion.div>
 
+
         <motion.div
           className="small-heading red"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{
+            opacity: 0
+          }}
+          animate={{
+            opacity: 1
+          }}
           transition={{
             delay: 0.5,
             duration: 0.8
@@ -112,6 +202,7 @@ export default function Hero() {
         >
           ENGINEERING THE FUTURE
         </motion.div>
+
 
         <motion.h1
           initial={{
@@ -128,6 +219,7 @@ export default function Hero() {
         >
           METHUN
         </motion.h1>
+
 
         <motion.h2
           initial={{
@@ -146,6 +238,7 @@ export default function Hero() {
           SOFTWARE <span>ENGINEER</span>
         </motion.h2>
 
+
         <motion.p
           className="hero-description"
           initial={{
@@ -161,7 +254,9 @@ export default function Hero() {
           BE CSE • DATA ENGINEERING • AI • FULL STACK DEVELOPMENT
         </motion.p>
 
+
         {/* BUTTONS */}
+
         <motion.div
           className="hero-buttons"
           initial={{
@@ -182,12 +277,15 @@ export default function Hero() {
             className="red-button"
             onClick={welcomeMessage}
           >
+
             <Volume2 size={20} />
 
             {speaking
               ? "Speaking..."
               : "Listen to my story"}
+
           </button>
+
 
           <button
             className="outline-button"
@@ -200,7 +298,9 @@ export default function Hero() {
 
       </div>
 
+
       {/* HERO IMAGE */}
+
       <div className="hero-image-container">
 
         <div className="red-glow"></div>
@@ -213,7 +313,9 @@ export default function Hero() {
 
       </div>
 
+
       {/* SIDE TEXT */}
+
       <div className="hero-side-text left">
 
         CODE.
@@ -229,6 +331,7 @@ export default function Hero() {
 
       </div>
 
+
       <div className="hero-side-text right">
 
         DATA DRIVEN
@@ -238,7 +341,9 @@ export default function Hero() {
 
       </div>
 
+
       {/* SCROLL INDICATOR */}
+
       <div className="scroll-indicator">
 
         <ArrowDown size={28} />
