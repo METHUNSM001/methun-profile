@@ -19,7 +19,7 @@ export default function Hero() {
     );
 
     speech.rate = 1;
-    speech.pitch = 1.00;
+    speech.pitch = 2;
     speech.volume = 1;
 
     const voices = window.speechSynthesis.getVoices();
