@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <button className="logo" onClick={() => scrollTo("Home") }>
-        <span className="logo-icon">SM</span>
+        <span className="logo-text">SM</span>
         <span className="logo-text">METHUN</span>
       </button>
 
