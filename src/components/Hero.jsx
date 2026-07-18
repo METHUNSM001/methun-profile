@@ -21,39 +21,43 @@ export default function Hero() {
 
     /*
     ==================================================
-    ALPHA MALE / DEEP / HARD VOICE SETTINGS
+    DEEP MALE VOICE SETTINGS
     ==================================================
     */
 
-    // Lower value = slower, more powerful delivery
-    speech.rate = 0.78;
+    // Slower rate for deeper, more powerful delivery
+    speech.rate = 0.75;
 
-    // Lower value = deeper voice
-    speech.pitch = 0.35;
+    // Very low pitch for deepest possible voice
+    speech.pitch = 0.3;
 
     speech.volume = 1;
 
 
     /*
     ==================================================
-    FIND A DEEP MALE ENGLISH VOICE
+    FIND DEEP MALE ENGLISH VOICE
     ==================================================
     */
 
     const voices = window.speechSynthesis.getVoices();
 
+    // Prioritized list of deep male voices
     const preferredMaleVoices = [
-      "Microsoft David",
-      "Microsoft Mark",
       "Google UK English Male",
       "Google US English Male",
+      "Microsoft David",
+      "Microsoft Mark",
       "Daniel",
       "Alex",
       "David",
       "Mark",
       "George",
       "James",
-      "Ravi"
+      "Fred",
+      "Ravi",
+      "Bruce",
+      "Tom"
     ];
 
     let selectedVoice = null;
@@ -89,7 +93,10 @@ export default function Hero() {
             voiceName.includes("daniel") ||
             voiceName.includes("alex") ||
             voiceName.includes("george") ||
-            voiceName.includes("james")
+            voiceName.includes("james") ||
+            voiceName.includes("fred") ||
+            voiceName.includes("bruce") ||
+            voiceName.includes("tom")
           )
         );
       });
