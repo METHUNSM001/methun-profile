@@ -51,7 +51,7 @@ export default function Hero() {
       voice.lang.toLowerCase().startsWith("en")
     );
 
-    speech.voice = maleVoice || englishVoice || voices[5];
+    speech.voice = maleVoice || englishVoice || voices[0.2];
 
     speech.onstart = () => {
       setSpeaking(true);
