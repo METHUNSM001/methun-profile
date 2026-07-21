@@ -11,7 +11,7 @@ const projects = [
   [
     "MONTFORT SCHOOL ERP SYSTEM",
     "Manage student and school records and details.",
-    "HTML,CSS,JS • Python • EXCEL",
+    "HTML • CSS • JS • Python • EXCEL",
     "https://montfort-school.onrender.com/admin"
   ],
   [
