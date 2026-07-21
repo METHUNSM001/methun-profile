@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const projects = [
   ["GREEN IDEA", "An AgriTech platform connecting farmers, transporters, shopkeepers and consumers.", "React Native • Python • MySQL • AI"],
-  ["AI DISASTER RESPONSE", "Emergency command center for accident detection, GPS location sharing and emergency assistance.", "React Native • Python • MySQL"],
+  ["MONTFOR SCHOOL ERP SYSTEM", "Manage student and school records and details.", "React.JS• Python • EXCEL"],
   ["CRYPTO DATA PIPELINE", "ETL pipeline that collects, transforms and visualizes cryptocurrency data.", "Python • MySQL • Streamlit"],
   ["WEATHER AI", "Weather intelligence application using live weather data and AI generated insights.", "React • OpenWeather API • Groq AI"]
 ];
