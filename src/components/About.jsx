@@ -8,7 +8,7 @@ export default function About() {
         <div><h2>I BUILD <span>DIGITAL FUTURES.</span></h2></div>
         <div className="about-text">
           <p>I am Methun, a passionate Computer Science and Engineering student currently pursuing my 3rd year of BE CSE.</p>
-          <p>I am passionate about building intelligent systems that combine software engineering, data engineering, artificial intelligence and real-world problem solving.</p>
+          <p>I am passionate about building intelligent systems that combine software engineering, database management and real-world problem solving.</p>
           <p>My goal is to create technology that is not only technically powerful but also useful for society.</p>
           <div className="stats">
             <div><strong>3+</strong><span>Years Learning</span></div>
