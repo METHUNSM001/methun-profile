@@ -16,7 +16,7 @@ export default function Hero() {
     window.speechSynthesis.cancel();
 
     const speech = new SpeechSynthesisUtterance(
-      "Welcome to my portfolio. I am Methun. I am currently pursuing my third year of Bachelor of Engineering in Computer Science and Engineering. I am passionate about software engineering, data engineering, artificial intelligence, full stack development, and building innovative solutions for real world problems."
+      "Welcome to my portfolio. I am Methun. I am currently pursuing my third year of Bachelor of Engineering in Computer Science and Engineering. I am passionate about software engineering, database management and full stack development, and building innovative solutions for real world problems."
     );
 
     /*
