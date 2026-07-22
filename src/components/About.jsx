@@ -11,8 +11,8 @@ export default function About() {
           <p>I am passionate about building intelligent systems that combine software engineering, database management and real-world problem solving.</p>
           <p>My goal is to create technology that is not only technically powerful but also useful for society.</p>
           <div className="stats">
-            <div><strong>3+</strong><span>Years Learning</span></div>
-            <div><strong>10+</strong><span>Projects</span></div>
+            <div><strong>2+</strong><span>Years Learning</span></div>
+            <div><strong>5+</strong><span>Projects</span></div>
             <div><strong>∞</strong><span>Ideas</span></div>
           </div>
         </div>
