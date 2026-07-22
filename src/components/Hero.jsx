@@ -258,7 +258,7 @@ export default function Hero() {
             delay: 0.8
           }}
         >
-          BE CSE • DATA ENGINEERING • AI • FULL STACK DEVELOPMENT
+          BE CSE • SOFTWARE ENGINEER • FULL STACK DEVELOPMENT
         </motion.p>
 
 
