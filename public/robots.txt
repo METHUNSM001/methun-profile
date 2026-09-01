@@ -1,0 +1,17 @@
+# robots.txt - Search Engine Crawling Directives
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://methunsm.vercel.app/sitemap.xml
+
+# Google-specific crawl delay
+User-agent: Googlebot
+Crawl-delay: 1
+
+# Bing crawl delay
+User-agent: Bingbot
+Crawl-delay: 1
